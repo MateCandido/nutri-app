@@ -1,0 +1,36 @@
+.uploaderContainer {
+    border: 2px dashed #ccc;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    background-color: #fdfdfd;
+    transition: all 0.2s ease-in-out;
+    margin-top: 1rem;
+}
+
+.uploaderContainer:hover {
+    border-color: #007bff;
+    background-color: #f9f9ff;
+}
+
+.placeholder p {
+    margin: 0 0 0.5rem;
+    color: #555;
+    font-weight: bold;
+}
+
+.placeholder span {
+    font-size: 2rem;
+}
+
+.previewImage {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.hiddenInput {
+    display: none;
+}
