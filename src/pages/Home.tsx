@@ -4,6 +4,7 @@ import { SearchBox } from '../components/SearchBox'
 import { NutritionCard } from '../components/NutritionCard'
 import { ImageUploader } from '../components/ImageUploader'
 import type { IApiResponse } from '../interfaces/NutritionData'
+import styles from './Home.module.css';
 
 async function fileToGenerativePart(file: File) {
   const reader = new FileReader()
@@ -76,6 +77,7 @@ export const Home = () => {
       setError("Failed to get data. Please try again.")
     } finally {
       setIsLoading(false)
+      setPrompt('')
     }
   }
 
@@ -117,11 +119,15 @@ export const Home = () => {
         <div>
           <ImageUploader onImageSelect={handleImageSelect} />
           {imageFile && !isLoading && (
-            <div style={{ textAlign: 'center', marginTop: '1rem' }}>
-              <button onClick={runImageQuery} disabled={isLoading}>
-                Analyze Image
-              </button>
-            </div>
+            <div className={styles.analyzeButtonContainer}>
+            <button 
+              onClick={runImageQuery} 
+              disabled={isLoading} 
+              className={styles.analyzeButton}
+            >
+              Analyze Image
+            </button>
+          </div>
           )}
         </div>
       )}
